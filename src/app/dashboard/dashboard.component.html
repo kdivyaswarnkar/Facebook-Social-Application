@@ -1,0 +1,80 @@
+<div class="attribution" [ngClass]="isLightMode?'light-mode':'dark-mode'">
+  
+    <div class="container">
+        <div class="patternTop"></div>
+
+        <header id="header" class="section">
+          <div class="title">
+            <h3>Social Media Dashboard</h3>
+            <p class="sub-text ">Total Followers: 23,004</p>
+          </div>
+          <div id="swicth">
+            <div class="dflex">
+              <div class="text sub-text">
+                Dark Mode
+              </div>
+              <div class="swicth-div">
+                <input type="checkbox" id="darkmode" (click)="ChangeTheme()">
+                <label for="darkmode"></label>
+              </div>
+            </div>
+      
+      
+          </div>
+        </header>
+      <section id="social" class="section sections-card">
+          <div *ngFor="let data of social.followers" class="card social-card">
+          <div class="header-color"
+          [ngClass]="{'fb-card': data.socialType == 'facebook', 'inst-card': data.socialType == 'instagram', 'twr-card': data.socialType == 'twitter', 'ytb-card': data.socialType == 'youtube'}"></div>
+          <a href="#" class="user-link">
+              <span [innerHTML]="data.icon | safe"></span>
+              <span class="sub-text"> {{data.username}} </span>
+              </a>
+              <h1>{{data.total}}</h1>
+              <div class="followers">
+              <p class="sub-text">{{data.followType}}</p>
+              <div class="change-direction">
+                  <span [innerHTML]="data.iconGraf | safe"></span>
+                  <span [ngClass]="data.isUp?'up':'down'"> {{data.countPerDay}} Today</span>
+              </div>
+      
+              </div>
+          </div>
+      </section>
+      <section class="section">
+          <div class="title">
+          <h3 class="sub-text">  Overview - Today </h3>
+          </div>
+      </section>
+      <section id="overview" class="section sections-card">
+      
+          <div *ngFor="let report of social.overViews" class="card overview-card"> 
+              <div class="views">
+                  <p class="sub-text thead">{{report.reportType}}</p>
+                  <h2 class="tr">{{report.total}}</h2>
+              </div>
+              <div class="changed">
+                  <div class="icon thead">
+                      <span [innerHtml]="report.icon | safe"></span>
+                  </div>
+                  <div class="views-raiting tr">
+                      <span [innerHtml]="report.iconGraf | safe"></span>
+                      <span [ngClass]="report.isUp ? 'up' : 'down'">{{report.persent}}%</span>
+                  </div>
+                  </div> 
+          </div>
+      
+      
+      </section >
+      <footer id="footer" class="section ">
+          <h4>
+            created by <a href="https://github.com/kdivyaswarnkar" target="_blank">kdivyaswarnkar</a>. 
+          </h4>
+          <p class="sub-text">
+            Coded by <a href="https://github.com/kdivyaswarnkar">@2023</a>.
+          </p>
+      
+        </footer>
+    </div>
+
+</div>

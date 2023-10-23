@@ -1,0 +1,24 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="accountService.accountValue">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+        <button class="btn btn-link nav-item nav-link" (click)="accountService.logout()">Logout</button>
+    </div>
+</nav>
+
+
+<!-- main app container -->
+
+   
+    <div class="container pt-4" >  
+        <router-outlet></router-outlet>
+    </div>
+
+
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <h4>
+        source code <a href="https://github.com/kdivyaswarnkar" target="_blank">kdivyaswarnkar</a>. 
+      </h4>
+</div>

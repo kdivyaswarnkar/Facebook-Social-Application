@@ -1,0 +1,34 @@
+﻿<h2>You're logged in with Angular Facebook!!</h2>
+<p>Below are your account details fetched from a secure API endpoint:</p>
+
+<!-- <img src="{{ account.picture.data.url }}"> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Facebook Id</th>
+            <th>Name</th>
+            <th>Extra Info</th>
+            <!-- <th><img src="{{account.profilePictureUrl}}"></th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="account">
+            <td>{{account.id}}</td>
+            <td>{{account.facebookId}}</td>
+            <td>{{account.name}}</td>
+            <td>{{account.extraInfo}}</td>
+           
+            <td style="width: 50px;">
+                <a routerLink="edit-account" class="btn btn-sm btn-primary">Edit</a>
+            </td>
+        </tr>
+        <tr *ngIf="!account">
+            <td colspan="5" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-dashboard></app-dashboard>

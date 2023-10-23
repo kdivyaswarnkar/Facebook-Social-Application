@@ -1,0 +1,70 @@
+@import "../../assets/variables";
+
+@media (max-width:1440px){
+    .attribution{
+        width: 100%;
+        margin: 0;
+
+    }
+}
+@media (max-width:1025px){
+    .section{
+        padding: 64px 50px 0 50px;
+        }
+}
+@media (max-width:1025px){
+    .section{
+        padding: 64px 50px 0 50px;
+        }
+}
+@media (max-width:920px){
+    .sections-card{
+        grid-template-columns: 50% 50%;
+    }
+}
+@media (max-width:600px){
+    #header{
+        padding-top: 35px;
+        grid-template-columns: 100%;
+    }
+    #header .title {
+        padding-bottom: 15px;
+    }
+    .dark-mode #header .title {
+        border-bottom: 1px solid $TextDesaturatedBlue;
+    }
+    .ligth-mode #header .title {
+        border-bottom: 1px solid $ligthToggle;
+    }
+    .text{
+        align-content: start;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 0; 
+    }
+    #swicth {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:450px){
+
+    .title h3 {
+        font-size: 19px;
+    }
+
+    .sections-card{
+        grid-template-columns: 100%;
+    }
+    .section {
+        padding: 25px;
+        
+    }
+    #overview {
+        padding-top: 10px;
+    }
+
+    #footer h4{
+        font-size: 16px;
+    }
+}

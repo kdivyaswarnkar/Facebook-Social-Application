@@ -1,0 +1,266 @@
+@import "../../assets/variables";
+
+.attribution{  
+    width: 100%;
+    min-height: 100vh; 
+    .patternTop{
+        position: absolute;
+       // min-height: 243px;
+        min-height: 170px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        border-radius: 0 0 20px 20px;
+    }
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+ 
+}
+
+.dark-mode{
+    .container{
+        background: $BGdDarkBlue;
+        color: $TextWhite;
+    }
+    .sub-text{
+        color: $TextDesaturatedBlue;
+    }
+    .sections-card> .card{
+        background: $CardBGDarkBlue;
+    }
+    .sections-card > .card:hover{
+        background: #333a56;
+    }
+    .patternTop,
+    #footer{
+        background: $BGPatterndarkBlue;
+    }
+}
+
+.ligth-mode{
+    .container{
+        background: $BGWhite;
+        color: $TextVeryDarkBlue;
+    }
+    .sub-text{
+        color: $TextDarkGrayishBlue;
+    }
+    .sections-card > .card{
+        background: $CardBGLightGrayishBlue;
+    }
+    .sections-card > .card:hover{
+        background: #e1e3f0;
+    
+    }
+    .patternTop,
+    #footer{
+        background: $BGPatternPaleBlue;
+    }
+}
+
+.section{
+    display: grid;
+    padding: 64px 170px 0 170px;
+}
+
+/* HEADER */
+.patternTop{
+    position: absolute;
+    min-height: 243px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 0 0 20px 20px;
+}
+
+
+.title{
+    h3{
+        font-size: 30px;
+        margin-bottom: 7px;
+    }
+    p{
+        font-weight: 600;
+    }
+}
+
+.text{
+    font-weight: 600;
+    height: auto;
+    text-align: right;
+    margin-left: auto;
+    padding-right: 12px;
+
+}
+header{
+    grid-template-columns: 70% 30%;
+    .dflex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swicth-div{
+        justify-content: end;
+        display: flex;
+        width: 70px;
+    }
+    #swicth{
+        width: 100%;
+    }
+    #darkmode{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+    #swicth label{
+        cursor: pointer;
+        text-indent: -99999px;
+        width: 50px;
+        height: 25px;
+        background: $darkToggle;
+        display: block;
+        border-radius: 100px;
+        position: relative;
+    }
+    #darkmode:checked + label{
+        background: $ligthToggle;
+    }
+    #darkmode:checked + label::after{
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+        background: $BGWhite;
+    }
+    #swicth label::after{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 21px;
+        height: 21px;
+        background: $TextVeryDarkBlue;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+}
+
+
+/* CARDS */
+.sections-card{
+    grid-template-columns: repeat(4, calc(25.5% - 28px));
+    gap: 28px;
+    
+    .card{
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.up{
+    color: $lime-Green;
+}
+.down{
+    color: $bright-Red;
+}
+
+/* Social cards */
+.social-card{
+    min-height: 220px;
+    .header-color{
+        height: 5px;
+        border-radius: 5px 5px 0 0px;
+    }
+    .fb-card{
+        background: $facebook;
+    }
+    .twr-card{
+        background: $twitter;
+    }
+    .inst-card{
+        background: $instagram;
+    }
+    .ytb-card{
+        background: $youTube;
+    }
+
+    h1{
+        font-size: 50px;
+
+    }
+    p{
+        font-size: 18px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .user-link{
+        display: block;
+        margin: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    
+    }
+    .change-direction span{
+        font-weight: bold;
+    }
+}
+
+
+/* OverView Card */
+#overview{
+    padding-top: 30px;
+    .overview-card{
+        min-height: 100px;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        padding: 15px 30px;
+    }
+    .thead {
+        margin-bottom: 40px;
+    }
+    .tr{
+        min-height: 30px;
+        line-height: 40px;
+    }
+    .views{
+        text-align: left;
+        p{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        h2{
+            font-size: 35px;
+        }
+    }
+    .changed{
+        text-align: right;
+    }
+    .views-raiting{
+        font-weight: 600;
+    }
+}
+
+/* FOOTER */
+#footer{
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    min-height: 60px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+
+}
+#footer a{
+    text-decoration: none;
+    color: $twitter;
+}
+#footer h4{
+    font-size: 20px;
+} 
+#footer p{
+    font-weight: 600;
+}
